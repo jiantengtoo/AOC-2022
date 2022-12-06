@@ -1,32 +1,18 @@
+import { checkCharactersUnique } from "./helper.ts";
+
 const input = await Deno.readTextFile("./input.txt");
 
-const checkCharactersUnique = (input: string): boolean => {
-  return new Set(input).size == input.length;
-};
+const numberOfChar = 14;
 
-let i = 13;
+let i = numberOfChar;
 
 let result = -1;
 
 do {
-  const fourteenChar =
-    input[i - 13] +
-    input[i - 12] +
-    input[i - 11] +
-    input[i - 10] +
-    input[i - 9] +
-    input[i - 8] +
-    input[i - 7] +
-    input[i - 6] +
-    input[i - 5] +
-    input[i - 4] +
-    input[i - 3] +
-    input[i - 2] +
-    input[i - 1] +
-    input[i];
+  const segment = input.substring(i - numberOfChar, i);
 
-  if (checkCharactersUnique(fourteenChar)) {
-    result = i + 1;
+  if (checkCharactersUnique(segment)) {
+    result = i;
   }
 
   i++;
