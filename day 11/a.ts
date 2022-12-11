@@ -7,13 +7,11 @@ const monkeysInput = input.split(/\n\n/);
 // parse to monkey object
 const monkeys = monkeysInput.map((monkeyText, index) => {
   const lines = monkeyText.split(/\n/);
-  // console.log(lines[1]);
 
   const items = lines[1]
     .split(": ")[1]
     .split(",")
     .map((i) => +i);
-  // console.log(items);
 
   const [operator, operand] = lines[2].split(" old ")[1].split(" ");
 
