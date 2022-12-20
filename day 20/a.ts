@@ -22,9 +22,6 @@ const moveNumber = (index: number, number: number) => {
 
   newIndex %= SIZE;
 
-  if (newIndex <= 0) {
-    newIndex += SIZE;
-  }
   arr.splice(newIndex, 0, node);
 };
 
