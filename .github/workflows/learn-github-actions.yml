@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - run: echo github.ref is ${{ github.ref }}
